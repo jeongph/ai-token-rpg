@@ -1,0 +1,12 @@
+# Local usage data and generated artifacts
+data.json
+card.txt
+.last_push
+.token-rpg.lock
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
