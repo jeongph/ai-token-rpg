@@ -1,6 +1,6 @@
 # ai-token-rpg
 
-Claude Code와 Codex의 로컬 토큰 사용량을 RPG 캐릭터 성장으로 바꿔 GitHub 프로필의 pinned Gist에 표시합니다.
+Claude Code와 Codex의 로컬 토큰 사용량을 RPG 캐릭터 성장으로 바꿔 GitHub 프로필에 고정한 Gist에 표시합니다.
 
 ```text
 🧙 Lv.54/200 · Context Mage · created Feb 3, 2026
@@ -11,7 +11,7 @@ XP 🟪🟪🟪🟪🟪⬛⬛⬛⬛⬛ 47.9% · 123.9M to Lv.55
 🕐 updated 2026-07-20 23:00 KST
 ```
 
-GitHub 프로필의 pinned Gist에는 첫 5줄이 보이고, 마지막 갱신 시각은 Gist를 열면 확인할 수 있습니다.
+GitHub 프로필에 고정한 Gist에는 첫 5줄이 보이고, 마지막 갱신 시각은 Gist를 열면 확인할 수 있습니다.
 
 ## 주요 기능
 
@@ -67,7 +67,7 @@ GitHub 프로필의 **Customize your pins**에서 생성한 Gist를 선택합니
 
 ## 자동 갱신
 
-두 훅이 같은 스크립트를 호출해도 파일 잠금으로 직렬화됩니다. 로컬 데이터는 매번 갱신하고, Gist push는 기본 30분에 한 번만 실행합니다.
+두 훅이 같은 스크립트를 동시에 호출하면 파일 잠금을 사용해 한 번에 하나씩 처리합니다. 로컬 데이터는 매번 갱신하고, Gist push는 기본 30분에 한 번만 실행합니다.
 
 ### Claude Code
 
@@ -118,7 +118,7 @@ Codex hook이 전달하는 transcript 경로는 편의 기능이며 transcript �
 
 ## 레벨 시스템
 
-최대 레벨은 200, 최종 필요 경험치는 1T tokens입니다. 초반에는 빠르게 성장하고 후반으로 갈수록 레벨업 비용이 커집니다.
+최대 레벨은 200, 최종 필요 경험치는 1T tokens입니다. 초반에는 빠르게 성장하고 후반으로 갈수록 다음 레벨에 필요한 토큰 수가 늘어납니다.
 
 ```python
 level = floor(200 * (total_tokens / 1_000_000_000_000) ** (1 / 4.5))
