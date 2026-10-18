@@ -31,8 +31,8 @@ GitHub 프로필에 고정한 Gist에는 첫 5줄이 보이고, 마지막 갱신
 준비물은 Python 3.9 이상과 GitHub CLI(`gh`)입니다.
 
 ```sh
-git clone https://github.com/jeongph/ai-token-rpg.git ~/Dev/lighthouse/repositories/ai-token-rpg
-cd ~/Dev/lighthouse/repositories/ai-token-rpg
+git clone https://github.com/jeongph/ai-token-rpg.git ~/ai-token-rpg
+cd ~/ai-token-rpg
 gh auth login
 gh auth refresh -h github.com -s gist
 ```
@@ -81,7 +81,7 @@ GitHub 프로필의 **Customize your pins**에서 생성한 Gist를 선택합니
         "hooks": [
           {
             "type": "command",
-            "command": "AI_TOKEN_RPG_GIST_ID=<GIST_ID> python3 $HOME/Dev/lighthouse/repositories/ai-token-rpg/src/ai_token_rpg.py --push --quiet"
+            "command": "AI_TOKEN_RPG_GIST_ID=<GIST_ID> python3 $HOME/ai-token-rpg/src/ai_token_rpg.py --push --quiet"
           }
         ]
       }
@@ -102,7 +102,7 @@ Codex는 공식적으로 turn-scoped `Stop` command hook을 지원합니다. 기
         "hooks": [
           {
             "type": "command",
-            "command": "AI_TOKEN_RPG_GIST_ID=<GIST_ID> python3 $HOME/Dev/lighthouse/repositories/ai-token-rpg/src/ai_token_rpg.py --push --quiet",
+            "command": "AI_TOKEN_RPG_GIST_ID=<GIST_ID> python3 $HOME/ai-token-rpg/src/ai_token_rpg.py --push --quiet",
             "timeout": 30
           }
         ]
